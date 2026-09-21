@@ -1,0 +1,74 @@
+.headline {
+}
+.tablePrice {
+  color: rgb(0, 0, 0);
+  width: 800px;
+  height: 80px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600; /*semi-bold */
+  & tr {
+  }
+}
+.tr1 {
+  background-color: rgba(248, 248, 248, 1);
+}
+.tr2 {
+  background-color: rgba(209, 214, 214, 1);
+}
+.zastava {
+  color: rgb(255, 0, 0);
+}
+.rentButton {
+  width: 198px;
+  height: 59px;
+  background-color: rgba(68, 66, 214, 1);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600; /*semi-bold */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.menu {
+  display: flex;
+  gap: 32px; /* відстань між вкладками */
+  border-bottom: 2px solid #ffffff; /* суцільна біла лінія знизу */
+  padding-bottom: 8px;
+}
+.tabMenu {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600; /* Semi Bold */
+  cursor: pointer;
+  position: relative;
+}
+/* .tabMenu {
+  content: "";
+  position: absolute;
+  bottom: -10px; 
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000; 
+} */
+.tabMenu:global(.active)::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000;
+}
+.chaWrapper {
+}
+.charContainer {
+}
+.imgAbout {
+  width: 548px;
+  height: 548px;
+}

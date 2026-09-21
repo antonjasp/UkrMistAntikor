@@ -1,17 +1,17 @@
-import style from './Header.module.css';
-import { NavLink } from 'react-router-dom';
+import style from "./Header.module.css";
+import { NavLink } from "react-router-dom";
 export function Header() {
   return (
     <>
       <header>
         <div className={style.logoContainer}>
-          <img src="./icons/logo.svg" alt="" className={style.logo} />
+          <img src="/icons/logo.svg" alt="" className={style.logo} />
           <img
-            src="./icons/logoTelegram.svg"
+            src="/icons/logoTelegram.svg"
             alt=""
             className={style.logoTelegram}
           />
-          <img src="./icons/logoViber.svg" alt="" className={style.logoViber} />
+          <img src="/icons/logoViber.svg" alt="" className={style.logoViber} />
           <div className={style.contactInfo}>
             (066)-075-02-28 <br />
             (067)-886-34-12

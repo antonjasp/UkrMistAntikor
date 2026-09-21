@@ -6,6 +6,7 @@ import { ContactPage } from "./pages/ContactPage/ContactPage";
 import { Main } from "./layouts/Main/Main";
 import { CategoryCardItem } from "./components/CategoryCardItem/CategoryCardItem";
 import { CardItem } from "./components/CardItem/CardItem";
+import { CardAboutItem } from "./components/CardAboutItem/CardAboutItem";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,11 +16,12 @@ export const router = createBrowserRouter([
         path: "/",
         element: <GeneralPage />,
         children: [
-          { path: "/", element: <CategoryCardItem /> }, //якщо нічого не вибрано завантажуємо категорії обладнання
+          { index: true, element: <CategoryCardItem /> },
           {
-            path: "product/:id", // За адресою '/product/1' замість карток завантажиться опис
+            path: "product/:categoryId",
             element: <CardItem />,
           },
+          { path: "product/:categoryId/:id", element: <CardAboutItem /> },
         ],
       },
       {
