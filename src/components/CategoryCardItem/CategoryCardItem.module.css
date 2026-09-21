@@ -1,0 +1,41 @@
+a {
+  text-decoration: none;
+}
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  /* 1. Базовий стан тіні та позиції */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* 2. Обов'язково додаємо плавність анімації (0.3 секунди) */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  cursor: pointer; /* Змінює курсор на вказівний палець */
+  & img {
+    width: 149px;
+    height: 90px;
+    align-self: center;
+    margin-top: 10px;
+  }
+  & p {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    padding-top: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+.categoryCard:hover {
+  /* Піднімає картку на 8 пікселів вгору */
+  transform: translateY(-8px);
+
+  /* Збільшує та розмиває тінь, створюючи ефект висоти */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
