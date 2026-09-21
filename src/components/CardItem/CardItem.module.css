@@ -11,8 +11,28 @@
   height: 311px;
   background-color: white;
   border-radius: 15px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+
   & img {
     width: 180px;
     height: 150px;
+    justify-self: center;
+    margin-top: 14px;
   }
+  & h4 {
+    margin-top: 10px;
+  }
+  & button {
+    width: 92px;
+    height: 25px;
+    border-radius: 12px;
+    background-color: rgba(255, 204, 103, 1);
+  }
+}
+.priceInfo {
+  display: flex;
+  justify-content: space-between;
 }

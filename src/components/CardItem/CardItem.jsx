@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom';
-import style from './CardItem.module.css';
-import { dataEquipment } from '../data';
+import { useParams } from "react-router-dom";
+import style from "./CardItem.module.css";
+import { dataEquipment } from "../data";
 export function CardItem() {
   const { id } = useParams();
   const selectedProduct = id
@@ -16,6 +16,10 @@ export function CardItem() {
             <img src={item.img} alt="" />
             <h4>{item.name}</h4>
             <p>{item.text}</p>
+            <div className={style.priceInfo}>
+              <h3>2500 грн/день</h3>
+              <button>Орендувати</button>
+            </div>
           </div>
         );
       })}
