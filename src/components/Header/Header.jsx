@@ -1,17 +1,33 @@
-import style from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import style from './Header.module.css';
+import { NavLink } from 'react-router-dom';
 export function Header() {
   return (
     <>
       <header>
         <div className={style.logoContainer}>
           <img src="/icons/logo.svg" alt="" className={style.logo} />
-          <img
-            src="/icons/logoTelegram.svg"
-            alt=""
-            className={style.logoTelegram}
-          />
-          <img src="/icons/logoViber.svg" alt="" className={style.logoViber} />
+          <a
+            href="https://t.me/+380678863412"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/logoTelegram.svg"
+              alt=""
+              className={style.logoTelegram}
+            />
+          </a>
+          <a
+            href="viber://chat?number=%2B380678863412"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/logoViber.svg"
+              alt=""
+              className={style.logoViber}
+            />
+          </a>
           <div className={style.contactInfo}>
             (066)-075-02-28 <br />
             (067)-886-34-12

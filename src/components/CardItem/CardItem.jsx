@@ -1,6 +1,6 @@
-import { NavLink, useParams } from "react-router-dom";
-import style from "./CardItem.module.css";
-import { dataEquipment } from "../data";
+import { NavLink, useParams } from 'react-router-dom';
+import style from './CardItem.module.css';
+import { dataEquipment } from '../data';
 export function CardItem() {
   const { categoryId } = useParams();
   const selectedProduct = categoryId
@@ -17,7 +17,7 @@ export function CardItem() {
               <h4>{item.name}</h4>
               <p>{item.text}</p>
               <div className={style.priceInfo}>
-                <h3>2500 грн/день</h3>
+                <h3>{item.price[0]} грн/день</h3>
                 <NavLink to={`${item.id_eq}`}>
                   <div>Орендувати</div>
                 </NavLink>

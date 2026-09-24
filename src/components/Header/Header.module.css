@@ -28,11 +28,41 @@ header {
   width: 60px;
   height: 60px;
   margin-right: 15px;
+  display: inline-block; /* Потрібно для коректної трансформації */
+  transition: transform 0.1s ease-in-out; /* Плавність анімації відпускання */
+  cursor: pointer;
 }
 .logoViber {
   width: 60px;
   height: 60px;
   margin-right: 15px;
+  display: inline-block; /* Потрібно для коректної трансформації */
+  transition: transform 0.1s ease-in-out; /* Плавність анімації відпускання */
+  cursor: pointer;
+}
+.logoViber:active {
+  /* Зменшуємо розмір на 10% і трохи зміщуємо вниз */
+  transform: scale(0.9) translateY(2px);
+  /* Можна додати легке помутніння для ефекту */
+  opacity: 0.8;
+}
+.logoTelegram:active {
+  /* Зменшуємо розмір на 10% і трохи зміщуємо вниз */
+  transform: scale(0.9) translateY(2px);
+  /* Можна додати легке помутніння для ефекту */
+  opacity: 0.8;
+}
+.logoTelegram:hover {
+  /* Зміщуємо на 5px вгору */
+  transform: translateY(-5px);
+  /* Додаємо м'яку тінь знизу, щоб підкреслити "підйом" */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.logoViber:hover {
+  /* Зміщуємо на 5px вгору */
+  transform: translateY(-5px);
+  /* Додаємо м'яку тінь знизу, щоб підкреслити "підйом" */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 .navMenu {
   height: 56px;

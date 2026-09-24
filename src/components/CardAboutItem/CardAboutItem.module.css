@@ -11,7 +11,7 @@
   width: 800px;
   height: 80px;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600; /*semi-bold */
   & tr {
   }
@@ -38,32 +38,60 @@
   color: white;
   justify-self: flex-end;
   margin-top: 20px;
+
+  transition: transform 0.1s ease-in-out; /* Плавність анімації відпускання */
+  cursor: pointer;
+}
+.rentButton:active {
+  /* Зменшуємо розмір на 10% і трохи зміщуємо вниз */
+  transform: scale(0.9) translateY(2px);
+  /* Можна додати легке помутніння для ефекту */
+  opacity: 0.8;
+}
+.rentButton:hover {
+  /* Зміщуємо на 5px вгору */
+  transform: translateY(-5px);
+  /* Додаємо м'яку тінь знизу, щоб підкреслити "підйом" */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 .menu {
   display: flex;
-  gap: 32px; /* відстань між вкладками */
-  border-bottom: 2px solid #ffffff; /* суцільна біла лінія знизу */
-  padding-bottom: 8px;
-}
-.tabMenu {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600; /* Semi Bold */
-  cursor: pointer;
+  gap: 32px;
+  border-bottom: 2px solid #e5e7eb; /* Сіра або біла нижня лінія */
   position: relative;
-  font-size: 16px;
 }
 
-.tabMenu:global(.active)::after {
+.tabMenu {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #d9d9da;
+  text-decoration: none;
+  position: relative; /* Обов'язково для прив'язки ::after */
+  transition: color 0.2s ease;
+}
+
+.tabMenu:hover {
+  color: #900018;
+}
+
+/* Автоматичний клас active від React Router */
+.tabMenu.active {
+  color: #a30000;
+  font-weight: 600;
+}
+
+/* Червона підкреслювальна лінія */
+.tabMenu.active::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -2px; /* Накладаємо рівно на border-bottom блоку .menu */
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: #ff0000;
+  height: 3px;
+  background-color: #d90429;
+  border-radius: 2px 2px 0 0;
 }
 .chaWrapper {
 }
