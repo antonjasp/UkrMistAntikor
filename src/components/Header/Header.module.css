@@ -88,3 +88,45 @@ header {
     transform: translateY(-8px);
   }
 }
+@media (max-width: 1110px) {
+  .logo {
+    left: 30%;
+    width: 489px;
+    height: 78px;
+  }
+}
+@media (max-width: 790px) {
+  .logo {
+    left: 10%;
+    transform: translateX(-20%); /* Позиціонує логотип РІВНО по центру шапки */
+    width: 279px;
+    height: 68px;
+  }
+  .navMenu {
+    gap: 41px;
+    & a {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 591px) {
+  .logo {
+    left: 10%;
+    width: 240px;
+    height: 78px;
+  }
+  .contactInfo {
+    font-size: 14px;
+  }
+
+  .logoTelegram {
+    width: 40px;
+    height: 40px;
+  }
+  .logoViber {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 427px) {
+}

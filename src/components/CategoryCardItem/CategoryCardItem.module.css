@@ -44,6 +44,12 @@ a {
   grid-column: 2;
   grid-row: 2;
   display: grid;
-  grid-template-columns: 210px 210px 210px 210px 210px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 35px;
+}
+@media (max-width: 427px) {
+  .cardWrapper {
+    margin-left: 20px;
+    gap: 10px;
+  }
 }
