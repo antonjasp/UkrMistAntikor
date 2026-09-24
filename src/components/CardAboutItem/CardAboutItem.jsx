@@ -34,7 +34,7 @@ export function CardAboutItem() {
               </tr>
             </tbody>
           </table>
-          <a href="tel:+380678863412" class="contact-link">
+          <a href="tel:+380678863412">
             <div className={style.rentButton}>Орендувати</div>
           </a>
           <div className={style.chaWrapper}>
