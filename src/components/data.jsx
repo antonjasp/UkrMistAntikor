@@ -94,7 +94,7 @@ export const dataEquipment = [
   },
   {
     id_eq: 4,
-    img: '/images/shotBlastingEquipment.png',
+    img: '/images/ShotBlastingEquipment/ShotBlastingEquipment_1.jpg',
     name: 'Дробе-метне обладнання',
     text: 'Продуктивність - 50 м2/год. метал/100 м2/год. бетон Ширина очищення  – 520 мм  Електродвигун – 400Вт/50Гц/20 кВт',
     description:
