@@ -35,14 +35,14 @@ export const DocxViewer = ({ fileUrl }) => {
       <style>{`
         /* Темна тема під ваш сайт */
         .docx-render-container .docx-document {
-          background-color: transparent !important;
-          color: #e2e8f0 !important; /* Світло-сірий текст */
+          
+          color: #000000 !important; /* Світло-сірий текст */
           padding: 0 !important;
           font-family: inherit !important;
         }
         .docx-render-container .docx-document p {
-          color: #e2e8f0 !important;
-          margin-bottom: 0.5rem !important;
+          color: #000000 !important;
+          
         }
         .docx-render-container .docx-document span {
           color: inherit !important;

@@ -1,14 +1,27 @@
+.cardWrapper {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 290px 290px 290px 290px;
+  gap: 100px;
+  margin-top: 20px;
+}
+
 a {
   text-decoration: none;
+  width: 290px;
+  height: 335px;
 }
 .categoryCard {
+  border: 1px solid rgb(200, 198, 198);
   display: flex;
   flex-direction: column;
-  width: 180px;
-  height: 180px;
-  background-color: white;
-  border-radius: 15px;
+  width: 290px;
+  height: 335px;
   padding: 10px;
+  background-color: white;
+  /* border-radius: 15px; */
+
   /* 1. Базовий стан тіні та позиції */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -19,17 +32,18 @@ a {
 
   cursor: pointer; /* Змінює курсор на вказівний палець */
   & img {
-    width: 149px;
-    height: 90px;
+    width: 189px;
+    height: 134px;
     align-self: center;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   & p {
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 500;
     color: rgb(0, 0, 0);
     padding-top: 18px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 }
 .categoryCard:hover {
@@ -38,18 +52,4 @@ a {
 
   /* Збільшує та розмиває тінь, створюючи ефект висоти */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-.cardWrapper {
-  margin-left: 60px;
-  grid-column: 2;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 35px;
-}
-@media (max-width: 427px) {
-  .cardWrapper {
-    margin-left: 20px;
-    gap: 10px;
-  }
 }

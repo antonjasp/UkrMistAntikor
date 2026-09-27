@@ -11,7 +11,7 @@ export function CardAboutItem() {
   return (
     <>
       <div className={style.wrapperAbout}>
-        <h1 className={style.headline}>{selectProduct[0].name}</h1>
+        {/* <h1 className={style.headline}>{selectProduct[0].name}</h1> */}
         <img
           src={selectProduct[0].img}
           alt="equuipImage"
@@ -45,7 +45,7 @@ export function CardAboutItem() {
                 }
                 to="description"
               >
-                Опис
+                <p>Опис</p>
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -53,7 +53,7 @@ export function CardAboutItem() {
                 }
                 to="characteristics"
               >
-                Характеристики
+                <p>Характеристики</p>
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -61,7 +61,7 @@ export function CardAboutItem() {
                 }
                 to="instructions"
               >
-                Інструкція
+                <p>Інструкція</p>
               </NavLink>
             </div>
             <div className={style.charContainer}>
