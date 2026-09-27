@@ -19,7 +19,7 @@ export function Header() {
               />
             </a>
             <a
-              href="viber://chat?number=%2B380678863412"
+              href="viber://chat?number=%2B380660750228"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -61,7 +61,7 @@ export function Header() {
               </button>
             </form>
             <div className={style.contactBtn}>
-              <p>контакти</p>
+              <p>замовити</p>
             </div>
           </navmenu>
         </div>

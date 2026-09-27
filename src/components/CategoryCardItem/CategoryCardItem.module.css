@@ -2,8 +2,9 @@
   grid-column: 2;
   grid-row: 2;
   display: grid;
-  grid-template-columns: 290px 290px 290px 290px;
-  gap: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+  row-gap: 45px;
   margin-top: 20px;
 }
 
