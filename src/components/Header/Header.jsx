@@ -32,6 +32,8 @@ export function Header() {
             <div className={style.contactInfo}>
               (066)-075-02-28 <br />
               (067)-886-34-12
+              <br />
+              м.Київ
             </div>
           </div>
         </div>
@@ -60,9 +62,9 @@ export function Header() {
                 </svg>
               </button>
             </form>
-            <div className={style.contactBtn}>
+            {/*  <div className={style.contactBtn}>
               <p>замовити</p>
-            </div>
+            </div>*/}
           </navmenu>
         </div>
         {/* 

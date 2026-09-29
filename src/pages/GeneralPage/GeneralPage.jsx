@@ -6,7 +6,9 @@ export function GeneralPage() {
   return (
     <>
       <main className={style.mainGen}>
-        {!idEq && <h1 className={style.mainHeadline}>Оренда обладнання</h1>}
+        {!idEq && (
+          <h1 className={style.mainHeadline}>Оренда будівельного обладнання</h1>
+        )}
 
         <div>
           <Outlet />
