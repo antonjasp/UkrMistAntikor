@@ -1,8 +1,8 @@
-import style from './Footer.module.css';
+import style from "./Footer.module.css";
 export function Footer() {
   return (
     <>
-      <footer></footer>
+      <footer className={style.footer}></footer>
     </>
   );
 }
