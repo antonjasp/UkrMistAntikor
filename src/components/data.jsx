@@ -1,7 +1,7 @@
 export const dataCategory = [
   {
     id_cat: 1,
-    name: 'Автомобіль з маніпулятором',
+    name: 'Оренда автомобіль з маніпулятором',
     img: './images/Kamaz/Kamaz.jpeg',
   },
   {

@@ -42,7 +42,7 @@ export function Header() {
               <input
                 type="text"
                 class={style.searchInput}
-                placeholder="Який інструмент бажаєте взяти в оренду?"
+                placeholder="Яке обладнання бажаєте взяти в оренду?"
               />
               <button type="submit" class={style.searchBtn} aria-label="Знайти">
                 <svg
