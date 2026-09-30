@@ -1,6 +1,6 @@
-import { Outlet, useParams } from "react-router-dom";
-//import { Breadcrumbs } from "../../components/Breadcrumbs";
-import style from "./GeneralPage.module.css";
+import { Outlet, useParams } from 'react-router-dom';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
+import style from './GeneralPage.module.css';
 export function GeneralPage() {
   const { idEq } = useParams();
   return (
@@ -9,7 +9,7 @@ export function GeneralPage() {
         {!idEq && (
           <h1 className={style.mainHeadline}>Оренда будівельного обладнання</h1>
         )}
-        {/* <Breadcrumbs /> */}
+        <Breadcrumbs />
         <div>
           <Outlet />
         </div>

@@ -110,3 +110,60 @@
 
 .rentPrice {
 }
+/* Контейнер всієї галереї ліворуч */
+.galleryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 548px; /* Ширина підходить під ваше головне фото */
+}
+
+.mainImgBox {
+  width: 100%;
+  height: 400px; /* Адаптована висота під головне зображення */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.imgAbout {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Список мініатюр знизу */
+.thumbnailsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumbBtn {
+  width: 100px;
+  height: 75px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+.thumbBtn:hover {
+  opacity: 0.8;
+}
+
+.thumbBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Червона/синя рамка для вибраної мініатюри */
+.thumbActive {
+  border-color: #4442d6; /* Колір вашої кнопки "Орендувати" */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

@@ -22,6 +22,8 @@
   color: #6c757d; /* Приглушений сірий колір для минулих сторінок */
   text-decoration: none;
   transition: color 0.2s ease;
+  height: fit-content;
+  width: fit-content;
 }
 
 .link:hover {

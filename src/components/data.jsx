@@ -61,6 +61,12 @@ export const dataEquipment = [
   {
     id_eq: 1,
     img: '/images/PD71/PD71.jpeg',
+    images: [
+      '/images/PD71/PD71_1.jpeg',
+      '/images/PD71/PD71_2.jpeg',
+      '/images/PD71/PD71_3.jpeg',
+      '/images/PD71/PD71_4.jpeg',
+    ],
     name: 'Дизельний гвинтовий компресор ATMOS PD-71',
     text: 'Продуктивність - 7,6 куб.м/хв. Робочий тиск - 7,0 бар. Максимальний тиск - 8,6 бар.',
     description: '/docxFiles/PD71/PD71_description.docx',
@@ -72,6 +78,14 @@ export const dataEquipment = [
   {
     id_eq: 2,
     img: '/images/PD130/PD130.jpeg',
+    images: [
+      '/images/PD130/PD130_1.jpeg',
+      '/images/PD130/PD130_2.jpeg',
+      '/images/PD130/PD130_3.jpeg',
+      '/images/PD130/PD130_4.jpeg',
+      '/images/PD130/PD130_5.jpeg',
+      '/images/PD130/PD130_6.jpeg',
+    ],
     name: 'Дизельний гвинтовий компресор ATMOS PD-130',
     text: 'Продуктивність - 16,7 куб.м/хв. Робочий тиск - 7,0 бар. Максимальний тиск - 8,6 бар.',
     description: '/docxFiles/PD130/PD130_description.docx',
@@ -83,6 +97,18 @@ export const dataEquipment = [
   {
     id_eq: 3,
     img: '/images/CompressorElectricSt/CompressorElectricSt.jpeg',
+    images: [
+      '/images/CompressorElectricSt/CompressorElectricSt_1.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_2.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_3.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_4.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_5.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_6.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_7.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_8.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_9.jpeg',
+      '/images/CompressorElectricSt/CompressorElectricSt_10.jpeg',
+    ],
     name: 'Стаціонарний електричний гвинтовий  компресор',
     text: 'Продуктивність - 7,6 куб.м/хв. Робочий тиск - 7,0 бар. Максимальний тиск - 8,6 бар.',
     description: '/docxFiles/StCompressor/StCompressor_description.docx',
@@ -95,6 +121,11 @@ export const dataEquipment = [
   {
     id_eq: 4,
     img: '/images/ShotBlastingEquipment/ShotBlastingEquipment_1.jpg',
+    images: [
+      '/images/ShotBlastingEquipment/ShotBlastingEquipment_1.jpg',
+      '/images/ShotBlastingEquipment/ShotBlastingEquipment_2.jpg',
+      '/images/ShotBlastingEquipment/ShotBlastingEquipment_3.jpg',
+    ],
     name: 'Дробе-метне обладнання',
     text: 'Продуктивність - 50 м2/год. метал/100 м2/год. бетон Ширина очищення  – 520 мм  Електродвигун – 400Вт/50Гц/20 кВт',
     description:
@@ -109,6 +140,11 @@ export const dataEquipment = [
   {
     id_eq: 5,
     img: '/images/Kamaz/Kamaz.jpeg',
+    images: [
+      '/images/Kamaz/Kamaz_1.jpeg',
+      '/images/Kamaz/Kamaz_2.jpeg',
+      '/images/Kamaz/Kamaz_3.jpeg',
+    ],
     name: 'Автомобіль з маніпулятором',
     text: 'Перевезення вантажу – до 10 тон. Вантажопідйомність маніпулятора – до 5 тон. Розмір платформи Д/Ш, м – 6,2/2,4. Працюємо по всій Україні. Водій наш.',
     description: '/docxFiles/.docx',
