@@ -10,8 +10,9 @@ export function CardAboutItem() {
   );
 
   // Отримуємо масив фотографій (якщо images є — використовуємо його, якщо тільки img — робимо з нього масив)
-  const imagesList = selectProduct?.images || (selectProduct?.img ? [selectProduct.img] : []);
-  
+  const imagesList =
+    selectProduct?.images || (selectProduct?.img ? [selectProduct.img] : []);
+
   // Стейт для вибраного фото (за замовчуванням перше з масиву)
   const [selectedImgIndex, setSelectedImgIndex] = useState(0);
 
@@ -53,10 +54,10 @@ export function CardAboutItem() {
         <table className={style.tablePrice}>
           <tbody>
             <tr className={style.tr1}>
-              <td>1-2 дня</td>
-              <td>3-6 днів</td>
-              <td>Ціна за місяць</td>
-              <td className={style.zastava}>Застава</td>
+              <td>{selectProduct.priceInfo[0]}</td>
+              <td>{selectProduct.priceInfo[1]}</td>
+              <td>{selectProduct.priceInfo[2]}</td>
+              <td className={style.zastava}>{selectProduct.priceInfo[3]}</td>
             </tr>
             <tr className={style.tr2}>
               <td>{selectProduct.price[0]} грн/день</td>

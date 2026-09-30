@@ -72,6 +72,7 @@ export const dataEquipment = [
     description: '/docxFiles/PD71/PD71_description.docx',
     characteristics: '/docxFiles/PD71/PD71_characteristics.docx',
     instructions: '/docxFiles/PD71/PD71_instructions.docx',
+    priceInfo: ['1-2 дня', '3-6 днів', 'Ціна за місяць', 'Застава'],
     price: [2500, 2500, 7500, 30000],
     id_cat: 2,
   },
@@ -91,6 +92,7 @@ export const dataEquipment = [
     description: '/docxFiles/PD130/PD130_description.docx',
     characteristics: '/docxFiles/PD130/PD130_characteristics.docx',
     instructions: '/docxFiles/PD130/PD130_instructions.docx',
+    priceInfo: ['1-2 дня', '3-6 днів', 'Ціна за місяць', 'Застава'],
     price: [5000, 5000, 150000, 60000],
     id_cat: 2,
   },
@@ -115,6 +117,7 @@ export const dataEquipment = [
     characteristics:
       '/docxFiles/StCompressor/StCompressor_characteristics.docx',
     instructions: '/docxFiles/StCompressor/StCompressor_instructions.docx',
+    priceInfo: ['1-2 дня', '3-6 днів', 'Ціна за місяць', 'Застава'],
     price: [5000, 5000, 150000, 60000],
     id_cat: 3,
   },
@@ -134,6 +137,7 @@ export const dataEquipment = [
       '/docxFiles/shotBlastingEquipment/shotBlastingEquipment_characteristics.docx',
     instructions:
       '/docxFiles/shotBlastingEquipment/shotBlastingEquipment_instructions.docx',
+    priceInfo: ['1-2 дня', '3-6 днів', 'Ціна за місяць', 'Застава'],
     price: ['Договірна', 'Договірна', 'Договірна', 'Договірна'],
     id_cat: 6,
   },
@@ -150,7 +154,8 @@ export const dataEquipment = [
     description: '/docxFiles/.docx',
     characteristics: '/docxFiles/.docx',
     instructions: '/docxFiles/.docx',
-    price: ['Договірна', 'Договірна', 'Договірна', 'Договірна'],
+    priceInfo: ['4 год.', '8 год.', 'грн./км', 'Застава'],
+    price: [5000, 9600, 52, 0],
     id_cat: 1,
   },
 ];
