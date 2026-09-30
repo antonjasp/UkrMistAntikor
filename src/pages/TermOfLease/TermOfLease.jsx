@@ -1,7 +1,10 @@
+import style from './TermOfLease.module.css';
 export function TermOfLease() {
   return (
     <>
-      <h6>Тут буде сторінка з умовами оренди</h6>
+      <div className={style.termContainer}>
+        <h4>Оренда обладнання на договірних умовах.</h4>
+      </div>
     </>
   );
 }

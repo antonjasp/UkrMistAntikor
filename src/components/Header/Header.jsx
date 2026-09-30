@@ -1,5 +1,5 @@
 import style from './Header.module.css';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 export function Header() {
   return (
     <>
@@ -62,18 +62,16 @@ export function Header() {
                 </svg>
               </button>
             </form>
-            {/*  <div className={style.contactBtn}>
-              <p>замовити</p>
-            </div>*/}
+            <div className={style.navMenu}>
+              <NavLink to="/">Оренда</NavLink>
+              <NavLink to="/term">Умови оренди</NavLink>
+              <NavLink to="/about">Про нас</NavLink>
+              <NavLink to="/contact">Контакти</NavLink>
+            </div>
           </navmenu>
         </div>
-        {/* 
-        <div className={style.navMenu}>
-          <NavLink to="/">Оренда</NavLink>
-          <NavLink to="/term">Умови оренди</NavLink>
-          <NavLink to="/about">Про нас</NavLink>
-          <NavLink to="/contact">Контакти</NavLink>
-        </div> */}
+        {/*
+         */}
       </header>
     </>
   );

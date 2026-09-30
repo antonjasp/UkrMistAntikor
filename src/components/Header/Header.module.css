@@ -103,6 +103,21 @@ header {
     font-weight: 600;
   }
 }
+.navMenu {
+  display: flex;
+  justify-self: flex-end;
+  gap: 30px;
+  font-size: 24px;
+  & a {
+    height: fit-content;
+    width: fit-content;
+    text-decoration: none;
+    color: #000000;
+  }
+  & a:hover {
+    text-decoration: underline #f89705;
+  }
+}
 
 @media (max-width: 400px) {
   .searchForm {
