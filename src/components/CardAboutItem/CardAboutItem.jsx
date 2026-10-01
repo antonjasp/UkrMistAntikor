@@ -60,8 +60,8 @@ export function CardAboutItem() {
               <td className={style.zastava}>{selectProduct.priceInfo[3]}</td>
             </tr>
             <tr className={style.tr2}>
-              <td>{selectProduct.price[0]} грн/день</td>
-              <td>{selectProduct.price[1]} грн/день</td>
+              <td>{selectProduct.price[0]} </td>
+              <td>{selectProduct.price[1]} </td>
               <td>{selectProduct.price[2]}</td>
               <td>{selectProduct.price[3]}</td>
             </tr>
