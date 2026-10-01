@@ -1,0 +1,11 @@
+.docx_render_container .docx_document {
+  color: #000000 !important; /* Світло-сірий текст */
+  padding: 0 !important;
+  font-family: inherit !important;
+}
+.docx_render_container .docx_document p {
+  color: #000000 !important;
+}
+.docx_render_container .docx_document span {
+  color: inherit !important;
+}

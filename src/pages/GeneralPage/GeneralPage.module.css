@@ -8,3 +8,19 @@
   margin-top: 25px;
   margin-bottom: 25px;
 }
+@media (max-width: 1134px) {
+  .mainHeadline {
+    padding-left: 25%;
+  }
+}
+@media (max-width: 870px) {
+  .mainHeadline {
+    padding-left: 15%;
+  }
+}
+@media (max-width: 704px) {
+  .mainHeadline {
+    padding-left: 15%;
+    font-size: 24px;
+  }
+}

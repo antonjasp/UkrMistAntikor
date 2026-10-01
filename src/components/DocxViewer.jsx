@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { renderAsync } from 'docx-preview';
+import style from './DocxViewer.module.css';
 
 export const DocxViewer = ({ fileUrl }) => {
   const containerRef = useRef(null);
@@ -17,7 +18,7 @@ export const DocxViewer = ({ fileUrl }) => {
 
         // Рендеримо точну копію docx
         await renderAsync(blob, containerRef.current, null, {
-          className: 'docx-document',
+          className: style.docx_document,
           inWrapper: false, // без додаткової обгортки сторінки
           ignoreWidth: true, // адаптивність під ширину контейнера
           ignoreHeight: true,
@@ -31,23 +32,7 @@ export const DocxViewer = ({ fileUrl }) => {
   }, [fileUrl]);
 
   return (
-    <div className="docx-render-container">
-      <style>{`
-        /* Темна тема під ваш сайт */
-        .docx-render-container .docx-document {
-          
-          color: #000000 !important; /* Світло-сірий текст */
-          padding: 0 !important;
-          font-family: inherit !important;
-        }
-        .docx-render-container .docx-document p {
-          color: #000000 !important;
-          
-        }
-        .docx-render-container .docx-document span {
-          color: inherit !important;
-        }
-      `}</style>
+    <div className={style.docx_render_container}>
       <div ref={containerRef} />
     </div>
   );
