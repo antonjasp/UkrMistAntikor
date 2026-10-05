@@ -9,6 +9,9 @@ const STATIC_MAP = {
   term: 'Умови оренди',
   about: 'Про нас',
   contact: 'Контакти',
+  description: 'Опис',
+  characteristics: 'Характеристики',
+  instructions: 'Інструкція',
 };
 
 export const Breadcrumbs = () => {

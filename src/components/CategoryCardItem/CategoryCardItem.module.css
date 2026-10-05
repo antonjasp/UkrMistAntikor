@@ -17,8 +17,8 @@ a {
   border: 1px solid rgb(200, 198, 198);
   display: flex;
   flex-direction: column;
-  width: 290px;
-  height: 335px;
+  width: 100%;
+  height: 100%;
   padding: 10px;
   background-color: white;
   /* border-radius: 15px; */
@@ -53,4 +53,34 @@ a {
 
   /* Збільшує та розмиває тінь, створюючи ефект висоти */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 628px) {
+  .cardWrapper {
+    gap: 20px;
+    row-gap: 45px;
+    margin-top: 20px;
+    grid-template-columns: auto auto;
+  }
+  a {
+    text-decoration: none;
+    width: 120px;
+    height: 175px;
+  }
+  .categoryCard {
+    padding: 10px;
+    & img {
+      width: 110px;
+      height: 105px;
+      align-self: center;
+      margin-top: 10px;
+    }
+    & p {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgb(0, 0, 0);
+      padding-top: 5px;
+      text-align: center;
+      margin-top: 5px;
+    }
+  }
 }

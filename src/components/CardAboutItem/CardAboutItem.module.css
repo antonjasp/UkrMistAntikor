@@ -8,7 +8,7 @@
 
 .rentPrice {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: max-content max-content auto;
   width: 100%;
 }
 
@@ -76,6 +76,7 @@
 }
 
 .menu a {
+  width: fit-content;
   height: fit-content;
 }
 
@@ -221,5 +222,24 @@
     max-width: 100%;
     overflow-x: auto; /* Додаємо скролл, якщо вміст все одно завеликий */
     -webkit-overflow-scrolling: touch; /* Плавний скролл на iOS */
+  }
+  .rentButtonLink {
+    width: 165px;
+    height: 41px;
+  }
+
+  .rentButton {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .menu {
+    gap: 45px;
+
+    width: 300px;
+  }
+
+  .tabMenu {
+    font-size: 14px;
+    font-weight: 500;
   }
 }
