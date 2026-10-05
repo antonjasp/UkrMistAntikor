@@ -68,7 +68,7 @@ export function CardAboutItem() {
           </tbody>
         </table>
 
-        <a href="tel:+380678863412" style={{ textDecoration: 'none' }}>
+        <a href="tel:+380678863412" style={{ textDecoration: 'none' }} className={style.rentButtonLink}>
           <div className={style.rentButton}>Орендувати</div>
         </a>
 

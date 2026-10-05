@@ -1,11 +1,55 @@
+/* Контейнер з прокруткою */
+.docx_render_container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Скидання обгортки docx-preview */
 .docx_render_container .docx_document {
-  color: #000000 !important; /* Світло-сірий текст */
-  padding: 0 !important;
-  font-family: inherit !important;
-}
-.docx_render_container .docx_document p {
   color: #000000 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
-.docx_render_container .docx_document span {
-  color: inherit !important;
+
+/* Скидаємо ширину для всіх внутрішніх div, section та параграфів */
+.docx_render_container .docx_document * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Примусова адаптація таблиці */
+.docx_render_container .docx_document table {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  table-layout: fixed !important; /* Розподіляє ширину комірок рівномірно */
+}
+
+/* Примусове стискання комірок */
+.docx_render_container .docx_document td,
+.docx_render_container .docx_document th {
+  width: auto !important; /* Скасовує жорстко прописану ширину з Word */
+  max-width: 100% !important;
+  font-size: 11px !important;
+  padding: 4px 5px !important;
+  word-break: break-word !important; /* Переносить довгі слова */
+  overflow-wrap: anywhere !important; /* Працює в усіх сучасних браузерах */
+  white-space: normal !important; /* Забороняє виходити в один рядок */
+}
+
+@media (max-width: 628px) {
+  /* Перебиваємо жорсткі відступи у section від Word */
+  :global(.docx_render_container section),
+  :global(.docx_render_container .docx section),
+  :global(section[style*='padding']) {
+    width: 250px;
+    zoom: 0.45 !important; /* Уменьшает секцию и всё её содержимое до 45% */
+  }
 }
