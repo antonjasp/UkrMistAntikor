@@ -1,14 +1,68 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import { dataEquipment, dataCategory } from '../data';
 import style from './Header.module.css';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const searchContainerRef = useRef(null);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
-  const toggleSearch = () => setIsSearchOpen((prev) => !prev);
+
+  const toggleMobileSearch = () => {
+    setIsMobileSearchOpen((prev) => !prev);
+  };
+
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.trim().length > 1) {
+      const filteredEquipment = dataEquipment
+        .filter((item) =>
+          item.name.toLowerCase().includes(query.toLowerCase())
+        )
+        .map((item) => ({ ...item, type: 'equipment' }));
+
+      const filteredCategories = dataCategory
+        .filter((item) =>
+          item.name.toLowerCase().includes(query.toLowerCase())
+        )
+        .map((item) => ({ ...item, type: 'category' }));
+
+      setSearchResults([...filteredEquipment, ...filteredCategories]);
+      setIsDropdownOpen(true);
+    } else {
+      setSearchResults([]);
+      setIsDropdownOpen(false);
+    }
+  };
+
+  const handleSelectResult = () => {
+    setIsDropdownOpen(false);
+    setSearchQuery('');
+    setIsMobileSearchOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <header>
@@ -48,14 +102,14 @@ export function Header() {
 
       <div className={style.navmenuWrapper}>
         <nav className={style.navmenu}>
-          {/* Кнопка виклику пошуку на мобільних */}
+          {/* Мобільна кнопка-лупа */}
           <button
             type="button"
             className={style.mobileSearchTrigger}
-            onClick={toggleSearch}
+            onClick={toggleMobileSearch}
             aria-label="Пошук"
           >
-            {isSearchOpen ? (
+            {isMobileSearchOpen ? (
               <svg
                 width="20"
                 height="20"
@@ -82,15 +136,24 @@ export function Header() {
             )}
           </button>
 
-          {/* Панель пошуку */}
+          {/* Форма пошуку (на десктопі повноцінний інпут, на мобільному показується за замовчуванням або при кліку) */}
           <div
-            className={`${style.searchPopupWrapper} ${isSearchOpen ? style.active : ''}`}
+            ref={searchContainerRef}
+            className={`${style.searchPopupWrapper} ${
+              isMobileSearchOpen ? style.active : ''
+            }`}
           >
-            <form className={style.searchForm}>
+            <form
+              className={style.searchForm}
+              onSubmit={(e) => e.preventDefault()}
+            >
               <input
                 type="text"
                 className={style.searchInput}
                 placeholder="Яке обладнання бажаєте взяти в оренду?"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                onFocus={() => searchQuery.length > 1 && setIsDropdownOpen(true)}
               />
               <button
                 type="submit"
@@ -112,9 +175,56 @@ export function Header() {
                 </svg>
               </button>
             </form>
+
+            {/* Випадаючий список підказок */}
+            {isDropdownOpen && searchResults.length > 0 && (
+              <ul className={style.searchResultsList}>
+                {searchResults.map((item) => {
+                  const linkPath =
+                    item.type === 'equipment'
+                      ? `/product/${item.id_cat}/${item.id_eq}`
+                      : `/product/${item.id_cat}`;
+
+                  return (
+                    <li
+                      key={
+                        item.type === 'equipment'
+                          ? `eq-${item.id_eq}`
+                          : `cat-${item.id_cat}`
+                      }
+                    >
+                      <NavLink
+                        to={linkPath}
+                        className={style.searchResultItem}
+                        onClick={handleSelectResult}
+                      >
+                        {item.img && (
+                          <img
+                            src={item.img}
+                            alt={item.name}
+                            className={style.searchResultImg}
+                          />
+                        )}
+                        <span className={style.searchResultName}>
+                          {item.name}
+                        </span>
+                      </NavLink>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+
+            {isDropdownOpen &&
+              searchResults.length === 0 &&
+              searchQuery.trim().length > 1 && (
+                <div className={style.searchResultsList}>
+                  <div className={style.noResults}>Нічого не знайдено</div>
+                </div>
+              )}
           </div>
 
-          {/* Бургер кнопка */}
+          {/* Кнопка бургер-меню */}
           <button
             type="button"
             className={`${style.burgerBtn} ${isMenuOpen ? style.open : ''}`}
