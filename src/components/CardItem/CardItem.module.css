@@ -56,3 +56,16 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 628px) {
+  .cardItem {
+    & a {
+      width: 92px;
+      height: 30px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+    & h3 {
+      margin-top: 5px;
+    }
+  }
+}
