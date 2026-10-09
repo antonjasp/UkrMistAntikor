@@ -32,12 +32,16 @@
   color: rgb(255, 0, 0);
 }
 
+.rentButtonContainer {
+  justify-self: end;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .rentButtonLink {
   width: 198px;
   height: 59px;
-  margin-top: 20px;
   display: block;
-  justify-self: end; /* На великому ПК кнопка Справа */
   text-decoration: none;
 }
 
@@ -52,19 +56,116 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transition: transform 0.1s ease-in-out;
+  transition:
+    transform 0.1s ease-in-out,
+    box-shadow 0.2s ease;
   cursor: pointer;
 }
 
 .rentButton:active {
-  transform: scale(0.9) translateY(2px);
+  transform: scale(0.95) translateY(2px);
   opacity: 0.8;
 }
 
 .rentButton:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* --- ОВЕРЛЕЙ ТА МОДАЛЬНЕ ВІКНО ПО ЦЕНТРУ --- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Темне тло */
+  backdrop-filter: blur(4px); /* Розмиття заднього фону */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.modalContent {
+  position: relative;
+  background-color: #ffffff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: scaleUp 0.2s ease-out forwards;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #000;
+}
+
+.modalContent p {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.modalContent a {
+  color: #4442d6;
+  font-weight: 500;
+  text-decoration: underline;
+  width: fit-content;
+  height: fit-content;
+}
+
+.contactTitle {
+  margin-bottom: 16px !important;
+  font-size: 22px !important;
+  color: #000;
+}
+.contaccNumberContainer {
+  width: fit-content;
+  height: fit-content;
+  flex-direction: column;
+  display: flex;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- ТАБИ ТА ТАБЛИЦІ --- */
 
 .menu {
   display: flex;
@@ -126,8 +227,8 @@
 
 .mainImgBox {
   width: 100%;
-  height: 400px;
-  border: 1px solid #e0e0e0;
+  max-height: 400px;
+  height: fit-content;
   border-radius: 4px;
   overflow: hidden;
   background-color: #f8f9fa;
@@ -136,7 +237,7 @@
 .imgAbout {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .thumbnailsList {
@@ -181,7 +282,7 @@
   .rentPrice {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* ВСІ елементи притискаються ВЛІВО */
+    align-items: flex-start;
     width: 100%;
   }
 
@@ -189,10 +290,8 @@
     width: 100%;
   }
 
-  .rentButtonLink {
-    align-self: flex-start; /* Кнопка стає ВЛІВО */
-    margin-top: 15px;
-    margin-bottom: 20px;
+  .rentButtonContainer {
+    align-self: flex-start;
   }
 }
 
@@ -204,25 +303,26 @@
     gap: 12px;
     width: 318px;
   }
+
   .tablePrice {
     font-size: 14px;
     width: 318px;
   }
-  .menu {
-    width: 318px;
-  }
+
   .chaWrapper,
   .charContainer {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: hidden; /* Запобігає полосі прокрутки на всій сторінці */
+    overflow-x: hidden;
   }
+
   .charContainer {
-    width: 100%; /* Використовуємо 100% ширини замість обмежень */
+    width: 100%;
     max-width: 100%;
-    overflow-x: auto; /* Додаємо скролл, якщо вміст все одно завеликий */
-    -webkit-overflow-scrolling: touch; /* Плавний скролл на iOS */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
+
   .rentButtonLink {
     width: 165px;
     height: 41px;
@@ -232,6 +332,7 @@
     font-size: 14px;
     font-weight: 600;
   }
+
   .menu {
     gap: 25px;
     width: 300px;
@@ -240,5 +341,9 @@
   .tabMenu {
     font-size: 14px;
     font-weight: 500;
+  }
+
+  .thumbnailsList {
+    gap: 6px;
   }
 }
